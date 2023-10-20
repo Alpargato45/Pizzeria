@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Pizzeria
 {
@@ -56,6 +57,12 @@ namespace Pizzeria
             }
         }
 
+        private void ponerImagen(System.Windows.Controls.Image image, String ruta)
+        {
+            image.Visibility = Visibility.Visible;
+            image.Source = new BitmapImage(new Uri(ruta));
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -63,6 +70,7 @@ namespace Pizzeria
 
 
         }
+
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
@@ -80,6 +88,34 @@ namespace Pizzeria
             ResetearTodo(stackBebidas);
             ResetearTodo(stackIngredientes);
             ResetearTodo(stackPedido);
+            imagenBebida.Visibility = Visibility.Hidden;
+
         }
+
+        private void radioBebidaAgua_Checked(object sender, RoutedEventArgs e)
+        {
+            String imagenPath = "E:\\Todo\\Informatica\\Grado Superior\\2023-2024\\Desarrollo de Interfaces\\1er Trimestre\\Tema 2\\WPF\\Pizzeria\\agua.jpg";
+            ponerImagen(imagenBebida,imagenPath);
+
+        }
+
+        private void radioBebidaCocacola_Checked(object sender, RoutedEventArgs e)
+        {
+            String imagenPath = "E:\\Todo\\Informatica\\Grado Superior\\2023-2024\\Desarrollo de Interfaces\\1er Trimestre\\Tema 2\\WPF\\Pizzeria\\cocacola.jpg";
+            ponerImagen(imagenBebida, imagenPath);
+        }
+
+        private void radioBebidaNaranja_Checked(object sender, RoutedEventArgs e)
+        {
+            String imagenPath = "E:\\Todo\\Informatica\\Grado Superior\\2023-2024\\Desarrollo de Interfaces\\1er Trimestre\\Tema 2\\WPF\\Pizzeria\\fanta.jpg";
+            ponerImagen(imagenBebida, imagenPath);
+        }
+
+        private void radioBebidaFanta_Checked(object sender, RoutedEventArgs e)
+        {
+            String imagenPath = "E:\\Todo\\Informatica\\Grado Superior\\2023-2024\\Desarrollo de Interfaces\\1er Trimestre\\Tema 2\\WPF\\Pizzeria\\nestea.jpg";
+            ponerImagen(imagenBebida, imagenPath);
+        }
+
     }
 }

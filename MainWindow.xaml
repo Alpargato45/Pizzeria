@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Pizzeria"
         mc:Ignorable="d"
         
-        Title="MainWindow" Height="450" Width="800">
+        
+        Title="MainWindow" Height="566" Width="906">
     <Grid Background="#FF141212">
         <Label Content="Pizzería" HorizontalAlignment="Center" Height="61" Margin="0,10,0,0" VerticalAlignment="Top" Width="110" FontSize="30"/>
         <GroupBox x:Name="boxMasas" HorizontalAlignment="Left" Height="137" Header="Tipos Masa" Margin="82,73,0,0" VerticalAlignment="Top" Width="148">
@@ -18,12 +19,12 @@
             </StackPanel>
 
         </GroupBox>
-        <GroupBox x:Name="boxBebidas" HorizontalAlignment="Left" Height="137" Header="Elegir Bebidas&#xD;&#xA;" Margin="82,242,0,0" VerticalAlignment="Top" Width="148">
+        <GroupBox x:Name="boxBebidas" HorizontalAlignment="Left" Height="137" Header="Elegir Bebidas" Margin="82,242,0,0" VerticalAlignment="Top" Width="148">
             <StackPanel x:Name="stackBebidas" Background="#FF2A2323">
-                <RadioButton x:Name="radioBebidaAgua" Content="Agua" Margin="5" GroupName="bebida"/>
-                <RadioButton x:Name="radioBebidaCocacola" Content="Cocacola" Margin="5" GroupName="bebida"/>
-                <RadioButton x:Name="radioBebidaNaranja" Content="Fanta Naranja" Margin="5" GroupName="bebida"/>
-                <RadioButton x:Name="radioBebidaFanta" Content="Nestea" Margin="5" GroupName="nestea"/>
+                <RadioButton x:Name="radioBebidaAgua" Content="Agua" Margin="5" GroupName="bebida" Checked="radioBebidaAgua_Checked"/>
+                <RadioButton x:Name="radioBebidaCocacola" Content="Cocacola" Margin="5" GroupName="bebida" Checked="radioBebidaCocacola_Checked"/>
+                <RadioButton x:Name="radioBebidaNaranja" Content="Fanta Naranja" Margin="5" GroupName="bebida" Checked="radioBebidaNaranja_Checked"/>
+                <RadioButton x:Name="radioBebidaFanta" Content="Nestea" Margin="5" GroupName="bebida" Checked="radioBebidaFanta_Checked"/>
             </StackPanel>
 
         </GroupBox>
@@ -49,7 +50,13 @@
                 <Label x:Name="txtPedido" Content="" Height="275" />
             </StackPanel>
         </GroupBox>
-
+        <GroupBox HorizontalAlignment="Left" Height="150" Header="Imagen" Margin="82,390,0,0" VerticalAlignment="Top" Width="148">
+            <StackPanel x:Name="StackImagen" Background="#FF2A2323">
+                <Image x:Name="imagenBebida" Width="130" Height="130" >
+                    
+                </Image>
+            </StackPanel>
+        </GroupBox>
 
     </Grid>
     <Window.Resources>
